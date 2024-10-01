@@ -1,12 +1,41 @@
-(load "./commands/flayer.lsp")
-(load "./commands/slayer.lsp")
-(load "./commands/stab.lsp")
-(load "./commands/sfile.lsp")
-(load "./commands/odirectory.lsp")
-(load "./commands/nav.lsp")
-
 (defun c::autoflux ()
-  (princ "\nAutoFlux loaded successfully. Use commands like :FLAYER, :SLAYER, :STAB, :SFILE, :ODIRECTORY, :NAV")
-)
 
-(princ "\nAutoFlux initialized. Use :AUTOFLUX to check status.")
+  ;;  (defun load-file (filename)
+
+  ;;    (setq filepath (findfile filename))
+
+  ;;    (if filepath
+
+  ;;        (load filepath)
+
+  ;;        (princ (strcat "\nError: " filename " not found."))
+
+  ;;    )
+
+  ;;  )
+
+ 
+
+  ;;  (setq baseDir (getvar "DWGPREFIX"))
+
+  ;;  (load-file (strcat baseDir "commands\\flayer.lsp"))
+
+  ;;  (load-file (strcat baseDir "commands\\stab.lsp"))
+
+  ;;  (load-file (strcat baseDir "commands\\sfile.lsp"))
+
+  ;;  (load-file (strcat baseDir "commands\\odirectory.lsp"))
+
+  ;;  (load-file (strcat baseDir "commands\\nav.lsp"))
+
+ 
+
+  (princ
+
+    "\nAutoFlux loaded successfully. Use commands like :FLAYER, :SLAYER, :STAB, :SFILE, :ODIRECTORY, :NAV"
+
+  )
+
+  (princ)
+
+)
