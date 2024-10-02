@@ -1,41 +1,30 @@
-(defun c::kcmd ()
-
-  ;;  (defun load-file (filename)
-
-  ;;    (setq filepath (findfile filename))
-
-  ;;    (if filepath
-
-  ;;        (load filepath)
-
-  ;;        (princ (strcat "\nError: " filename " not found."))
-
-  ;;    )
-
-  ;;  )
-
- 
-
-  ;;  (setq baseDir (getvar "DWGPREFIX"))
-
-  ;;  (load-file (strcat baseDir "commands\\flayer.lsp"))
-
-  ;;  (load-file (strcat baseDir "commands\\stab.lsp"))
-
-  ;;  (load-file (strcat baseDir "commands\\sfile.lsp"))
-
-  ;;  (load-file (strcat baseDir "commands\\odirectory.lsp"))
-
-  ;;  (load-file (strcat baseDir "commands\\nav.lsp"))
-
- 
-
-  (princ
-
-    "\nkcmd loaded successfully. Use commands like :FLAYER, :SLAYER, :STAB, :SFILE, :ODIRECTORY, :NAV"
-
+(defun print-kcmd-info (auto-load)
+  (princ "\n")
+  (if auto-load
+    (princ "kcmd - Successfully loaded!\n\n") 
   )
-
+  (princ "kcmd - Command Line Tool for AutoCAD\n")
+  (princ "\n")
+  (princ "Version: 1.0.0\n")
+  (princ "\n")
+  (princ "Commands Overview:\n")
+  (princ "  :flayer     - Manage layers (on/off, freeze, lock, etc.)\n")
+  (princ "  :sfile      - Switch between open files\n")
+  (princ "  :slayer     - Search and switch layers\n")
+  (princ "  :stab       - Navigate between layout tabs\n")
+  (princ "  :nav        - Navigate the file system\n")
+  (princ "  :odirectory - Open the current drawing's directory\n")
+  (princ "\n")
+  ;; (princ "Type :help [command] for detailed usage.\n")
+  (princ "\n")
+  (princ "For support, email: hello@lugenx.com\n")
+  ;; (princ "Download the latest version: kcmd.lugenx.com\n")
+  (princ "\n")
   (princ)
-
 )
+
+(defun c::kcmd ()
+  (print-kcmd-info nil) 
+)
+
+(print-kcmd-info t)
