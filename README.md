@@ -1,6 +1,6 @@
 # kcmd - Command Line Management Tool for AutoCAD
 
-**kcmd** is an AutoLISP-based application that provides efficient tools for managing layers, files, and directories directly from the AutoCAD command line using keyboard. Each command is designed to streamline typical AutoCAD management tasks without needing the mouse, making it ideal for users who prefer keyboard-based interactions.
+**kcmd** is an AutoLISP-based application that provides efficient tools for managing layers, files, tabs, and directories directly from the AutoCAD command line using keyboard. Each command is designed to streamline typical AutoCAD management tasks without needing the mouse, making it ideal for users who prefer keyboard-based interactions.
 
 ## Features
 
