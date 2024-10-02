@@ -1,4 +1,4 @@
-(defun c::autoflux ()
+(defun c::kcmd ()
 
   ;;  (defun load-file (filename)
 
@@ -32,7 +32,7 @@
 
   (princ
 
-    "\nAutoFlux loaded successfully. Use commands like :FLAYER, :SLAYER, :STAB, :SFILE, :ODIRECTORY, :NAV"
+    "\nkcmd loaded successfully. Use commands like :FLAYER, :SLAYER, :STAB, :SFILE, :ODIRECTORY, :NAV"
 
   )
 
