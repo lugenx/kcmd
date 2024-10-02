@@ -1,29 +1,23 @@
 (defun c::nav ()
-  (textscr)  ; Open the text screen and keep it open
-  (setq *home-dir* (getenv "USERPROFILE"))  ; Set the home directory to the user's home directory
+  (textscr)  
+  (setq *home-dir* (getenv "USERPROFILE"))  
   (setq *current-dir* (if (getvar "DWGNAME")
                           (getvar "DWGPREFIX")
-                          *home-dir*))  ; Set initial directory to the current CAD file location or home directory
+                          *home-dir*))  
   (princ (strcat "\nInitial directory: " *current-dir*))
   (while t
     (setq input (getstring "\nEnter command (cd, .., ls, openfile, opendir, exit): " T))
     (setq input-list (vl-string->list input " "))
     (setq command (car input-list))
-    ;; Properly join the remaining elements as the argument
     (setq arg (apply 'strcat (mapcar (function (lambda (x) (strcat x " "))) (cdr input-list))))
     (setq arg (vl-string-trim " " arg))
-    ;; Debug print statements
     (cond
       ((equal command "cd")
-        ;; Trim leading and trailing spaces from the argument
         (setq arg (vl-string-trim " " arg))
-        ;; Check if the input is an absolute path
         (if (vl-string-search ":\\" arg)
           (setq full-path arg)
-          ;; If not an absolute path, treat it as a relative path
           (setq full-path (vl-filename-makepath *current-dir* arg))
         )
-        ;; Handle the ~ as home directory
         (if (equal arg "~")
           (setq full-path *home-dir*)
         )
@@ -95,8 +89,8 @@
   (vl-string-right-trim chars (vl-string-left-trim chars str))
 )
 
-(setq *home-dir* (getenv "USERPROFILE"))  ; Set the home directory to the user's home directory
+(setq *home-dir* (getenv "USERPROFILE"))  
 (setq *current-dir* (if (getvar "DWGNAME")
                         (getvar "DWGPREFIX")
-                        *home-dir*))  ; Set initial directory to the current CAD file location or home directory
+                        *home-dir*))  
 (princ (strcat "\nInitial directory: " *current-dir*))
